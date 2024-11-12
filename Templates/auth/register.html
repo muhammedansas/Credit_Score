@@ -1,0 +1,35 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="h4 text-black">Create Your Account</h2>
+    </div>
+
+    <div class="card shadow-sm border-0" style="max-width: 400px; margin: 0 auto;">
+        <div class="card-body p-4" style="background: linear-gradient(135deg, #3D5A80, #4B7A8D); border-radius: 10px;">
+            <h5 class="card-title text-white text-center mb-4">Register</h5>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group mb-3">
+                    <label for="username" class="text-white">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email" class="text-white">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password" class="text-white">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="confirm_password" class="text-white">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="btn btn-block text-white" style="background: linear-gradient(90deg, #3D5A80, #4B7A8D);">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

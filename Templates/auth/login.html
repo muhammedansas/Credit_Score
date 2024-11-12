@@ -1,0 +1,36 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0" style="background: linear-gradient(135deg, #3D5A80, #4B7A8D); border-radius: 10px;">
+                <div class="card-body p-4">
+                    <h2 class="h4 text-center text-white mb-4">Login</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="form-group mb-3">
+                            <label for="username" class="text-white">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required placeholder="Enter your username">
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="password" class="text-white">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required placeholder="Enter your password">
+                        </div>
+                        
+                        <div class="form-group text-center mb-4">
+                            <button type="submit" class="btn btn-light btn-block" style="background: linear-gradient(90deg, #3D5A80, #4B7A8D); color: white;">Login</button>
+                        </div>
+                        
+                        <div class="form-group text-center">
+                            <a class="text-white">Forgot password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
